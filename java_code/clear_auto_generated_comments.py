@@ -6,12 +6,13 @@ python-version: 3+
 
 import os
 
+from common import check_dir_exists
+
+
 def clear_auto_generated_comments(dir_path):
     """ clear the "// TODO Auto-generated catch block" in java code """
-    # check if the directory exists
-    if not os.path.exists(dir_path):
-        print(f'the directory path is not exist: {dir_path}.')
-        return
+    if not check_dir_exists(dir_path):
+        return False
 
     # iterate sub files and directories
     for root, dirs, files in os.walk(dir_path):

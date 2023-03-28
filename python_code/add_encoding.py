@@ -6,15 +6,12 @@ support python3+
 
 import os
 
+from common import check_dir_exists
+
 
 def add_encoding(dir_path):
     """ add coding=utf-8 into each py file in dir and its sub-dir """
-    if not os.path.exists(dir_path):
-        print(f'the directory of given path is not exist: {dir_path}')
-        return False
-
-    if not os.path.isdir(dir_path):
-        print(f'the directory of given path is not a directory: {dir_path}')
+    if not check_dir_exists(dir_path):
         return False
 
     for root_path, sub_dirs, sub_files in os.walk(dir_path):

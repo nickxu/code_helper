@@ -6,14 +6,13 @@ python-version: 3+
 
 import os
 
+from common import check_dir_exists
+
+
 def add_readme(dir_path):
     """ add README.md file into the project dir """
-
-    # check directory exists
-    if not os.path.exists(dir_path):
-        print(f'the directory path is not exist: {dir_path}.')
+    if not check_dir_exists(dir_path):
         return False
-
 
     # check README.md exists
     readme_path = os.path.join(dir_path, 'README.md')
@@ -28,7 +27,6 @@ def add_readme(dir_path):
 
     print(f'create README.md successfully: {readme_path}.')
     return True
-
 
 
 if __name__ == '__main__':

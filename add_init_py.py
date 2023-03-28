@@ -6,13 +6,13 @@ python-version: 3+
 
 import os
 
+from common import check_dir_exists
+
 
 def add_init_py(dir_path):
     """ add init.py file into every python package dir """
 
-    # check directory exists
-    if not os.path.exists(dir_path):
-        print(f'the directory path is not exist: {dir_path}.')
+    if not check_dir_exists(dir_path):
         return False
 
     # iterate sub directories
