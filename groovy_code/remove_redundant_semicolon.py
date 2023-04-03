@@ -39,5 +39,5 @@ def do_it(dir_path):
 
 
 if __name__ == '__main__':
-    v_dir_path = ''
+    v_dir_path = 'D:/workspaces/groovy_demo'
     do_it(v_dir_path)
